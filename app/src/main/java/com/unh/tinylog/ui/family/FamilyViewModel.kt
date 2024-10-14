@@ -1,13 +1,13 @@
-package com.unh.tinylog.ui.notifications
+package com.unh.tinylog.ui.family
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
+class FamilyViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+        value = "This is family Fragment"
     }
     val text: LiveData<String> = _text
 }
