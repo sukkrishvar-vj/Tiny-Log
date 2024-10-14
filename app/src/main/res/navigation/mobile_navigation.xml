@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.unh.tinylog.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_addEventFragment"
+            app:destination="@id/addEventFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_family"
@@ -22,4 +26,13 @@
         android:name="com.unh.tinylog.ui.account.AccountFragment"
         android:label="@string/title_account"
         tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/addEventFragment"
+        android:name="com.unh.tinylog.ui.home.AddEventFragment"
+        android:label="fragment_add_event"
+        tools:layout="@layout/fragment_add_event" >
+        <action
+            android:id="@+id/action_addEventFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
 </navigation>
