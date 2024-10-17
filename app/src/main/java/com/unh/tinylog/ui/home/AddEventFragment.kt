@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
+import androidx.navigation.fragment.findNavController
 import com.unh.tinylog.R
 
 class AddEventFragment : Fragment() {
@@ -19,7 +21,9 @@ class AddEventFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO: Use the ViewModel
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(this){
+            findNavController().navigate(AddEventFragmentDirections.actionAddEventFragmentToNavigationHome())
+        }
     }
 
     override fun onCreateView(

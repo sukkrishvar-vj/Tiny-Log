@@ -1,13 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.AddEventFragment">
+    android:padding="16dp">
 
-    <TextView
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtFieldChildName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="Child Name"
+        android:singleLine="true"
+        android:textAlignment="center"
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/childPic"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/txtFieldChildName"
+        android:padding="5dp"
+        app:srcCompat="@drawable/baseline_child_care_24"
+        />
+
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/childPic"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:padding="10dp"
+        app:cardElevation="8dp"
+        android:id="@+id/cardViewAge"
+        app:cardCornerRadius="10dp"
+        >
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txtChildAgeHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Child Age"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:padding="10dp"
+                />
+
+            <SeekBar
+                android:id="@+id/seekAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtChildAgeHeader" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtChildAge"
+                android:text="10 Months"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@id/seekAge"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtFieldChildDescription"
+        android:layout_below="@id/cardViewAge"
+        android:hint="Description"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtFieldChildDescription"
+        android:text="Boy "
+        android:id="@+id/switchGender"
+        android:padding="20dp"
+        android:textSize="20sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSaveChild"
+        android:layout_toRightOf="@+id/switchGender"
+        android:layout_below="@+id/txtFieldChildDescription"
+        android:padding="20dp"
+        android:text="Save"
+        android:layout_alignParentRight="true"
+        />
+
+
+</RelativeLayout>
