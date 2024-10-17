@@ -66,7 +66,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnAddChild.setOnClickListener{
-//            Log.d("MYTEST","Button Pressed")
+            //Log.d("MYTEST","Button Pressed")
             val action = HomeFragmentDirections.actionNavigationHomeToAddEventFragment()
             findNavController().navigate(action)
         }
